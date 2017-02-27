@@ -10,13 +10,18 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void followSpeed() {
+
+		referenceSpeed += step;
 		if (referenceSpeed < 0) {
 			referenceSpeed = 0;
-		} else {
-			referenceSpeed += step;
 		}
 
 		enforceSpeedLimit();
+	}
+
+	public void counter(){
+		for(int i = 0; i < 101; i+=10)
+			System.out.println(i);
 	}
 
 	@Override
